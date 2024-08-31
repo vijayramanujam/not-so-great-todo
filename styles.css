@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E0FBE2;
+
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+
+}
+
+
+
+h1 {
+
+    text-align: center;
+    color: #FF8F00;
+}
+
+form {
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+input[type="text"] {
+    flex: 3;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    flex: 0.2;
+    padding: 10px 20px;
+    margin-left: 4px;
+    background-color: #0A6847;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+
+    list-style: none;
+    padding: 2px;
+    margin: 5px;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.todo-text {
+    margin-left: 10px;
+}
