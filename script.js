@@ -1,5 +1,9 @@
+const currentDate = new Date();
 
-// Add button
+const formattedDate = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
+
+// Update the content of the span element
+document.getElementById("current-date").textContent = formattedDate;
 
 const addButton = document.getElementById("addButton");
 addButton.addEventListener("click", (event) => {
@@ -23,6 +27,8 @@ addButton.addEventListener("click", (event) => {
         completeButton.addEventListener("click", () => {
             item.classList.toggle("completed"); // adds a class to complete button
 
+
+
             if (item.classList.contains("completed")) {
                 completeButton.textContent = "Incomplete";
             } else {
@@ -34,7 +40,11 @@ addButton.addEventListener("click", (event) => {
 
         const textSpan = document.createElement("span"); // create a span element
         textSpan.classList.add("todo-text"); // adds a todo-text class to this span
-        textSpan.textContent = todo.value; // actual todo in play
+        // textSpan.textContent = todo.value;
+        const currentTime = new Date();
+        const hours = currentTime.getHours().toString().padStart(2, '0');
+        const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+        textSpan.textContent = `${todo.value} (${hours}:${minutes})`;
 
         item.appendChild(deleteButton);
         item.appendChild(completeButton);
@@ -52,15 +62,19 @@ const clearButton = document.getElementById('clearButton');
 const clearAllButton = document.getElementById('clearAll')
 
 
-clearButton.addEventListener('click', function () {
+clearButton.addEventListener('click', function (event) {
+    event.preventDefault(event);
     const todo = document.querySelector("input[name='todo']");
     if (todo.value !== "") {
+        console.log('todo')
+        console.log(todo.value)
         todo.value = "";
     }
 });
 
 
-clearAllButton.addEventListener('click', function () {
+clearAllButton.addEventListener('click', function (event) {
+    event.preventDefault();
     const todoList = document.getElementById("todo-list");
 
     if (todoList.children.length > 0) {

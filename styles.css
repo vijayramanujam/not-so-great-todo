@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #E0FBE2;
+    background-color: #e0dfd3;
 
 
     font-family: "Montserrat", sans-serif;
@@ -9,6 +9,10 @@ body {
 
 }
 
+#current-date {
+
+    color: #15638a;
+}
 
 
 h1 {
